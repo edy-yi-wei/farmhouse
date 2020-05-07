@@ -3,7 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 //import 'package:http/http.dart' as http;
 import 'package:superhero_app/screens/settings.dart';
-import 'package:superhero_app/screens/Dashboard.dart';
+import 'package:superhero_app/screens/dashboard.dart';
+import 'package:superhero_app/screens/cage_master_list.dart';
 
 class Home extends StatefulWidget {
   final String title;
@@ -18,7 +19,7 @@ class _HomeState extends State<Home> {
   int _menuIndex = 0;
   List<Widget> _children = [
     Dashboard(title: "Dashboard"),
-    Text('Master'),
+    CageMasterList(title: "Master Kandang"),
     Text('Input'),
     Text('Report'),
     Text('Setting')

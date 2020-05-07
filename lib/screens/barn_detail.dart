@@ -24,6 +24,7 @@ class BarnDetail extends StatefulWidget {
 class _BarnDetailState extends State<BarnDetail> {
   bool _loading;
   Cage cage;
+
   getCage() async {
     setState(() {
       _loading = true;
@@ -37,7 +38,7 @@ class _BarnDetailState extends State<BarnDetail> {
       cage = Cage.fromJson(decodedJson);
       _loading = false;
     });
-    print(decodedJson);
+//    print(decodedJson);
 //    int code = response.statusCode;
 //    if (code == 200) {
 //      setState(() {
@@ -61,11 +62,11 @@ class _BarnDetailState extends State<BarnDetail> {
         length: 4,
         child: Scaffold(
             appBar: AppBar(
-                title: Text('Detail'),
+                title: Text(this.cage.cageName),
                 bottom: TabBar(
                     tabs: [
-                      Tab(text: 'Summary'),
-                      Tab(text: 'Populasi'),
+                      Tab(icon: Icon(Icons.sms), text: 'Summary'),
+                      Tab(icon: Icon(Icons.ac_unit), text: 'Populasi'),
                       Tab(text: 'Pakan'),
                       Tab(text: 'Produksi')
                     ]
